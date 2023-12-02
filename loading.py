@@ -39,4 +39,4 @@ def load_directory(directory):
 
 if __name__ == "__main__":
     files = load_directory("data")
-    print(len(files))
+    #print(len(files))

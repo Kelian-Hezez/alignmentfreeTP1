@@ -15,6 +15,25 @@ def kmer2str(val, k):
     return "".join(str_val)
 
 
-def stream_kmers(text, k):
-    # --- To complete ---
-    pass
+def stream_kmers(sequences, k):
+    letters={'A':0, 'C':1, 'T':2, 'G':3}
+    mask=(1<<(2*k))-1
+    kmer=0
+    kmer_comp=0
+    count=1
+    for j in range(len(sequences)):
+        for i in sequences[j]:
+            if i in letters:
+                nuc=letters[i]
+                comp=nuc+2
+                comp&=0b11
+                comp<<=(2*k-2)
+                kmer<<=2
+                kmer_comp>>=2
+                kmer+=nuc
+                kmer_comp+=comp
+                kmer&=mask
+
+            if count>=k:
+                yield(min(kmer, kmer_comp))
+            count+=1
