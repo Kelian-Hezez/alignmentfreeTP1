@@ -51,3 +51,6 @@ En revanche quand on compare des génomes d'espèces différentes (comme C avec 
 
 Conclusion:
 D'après ces comparaisons, la distance de jaccard est un indicateur cohérent de la distance génétique entre deux individus.
+
+Info pratique: 
+Dans les données, il nous manque l'information sur certains nucléotides. Ces derniers ont été ignorés
