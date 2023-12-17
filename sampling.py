@@ -17,14 +17,6 @@ def sample(f, k, s):
     for kmer in stream_kmers(f, k):
         m=sketch[0]
         kmer=xorshift(state)^kmer
-        print(kmer)
         if -kmer>m:
             hp.heappushpop(sketch,-kmer)
     return sketch
-
-
-f="ATGCGTA"
-k=3
-s=3
-sketch=sample(f,k,s)
-print(sketch)
