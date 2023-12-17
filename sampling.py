@@ -15,8 +15,7 @@ def sample(f, k, s):
     hp.heapify(sketch)
     state=[123456789]
     for kmer in stream_kmers(f, k):
-        m=sketch[0]
-        kmer=xorshift(state)^kmer
-        if -kmer>m:
+        #kmer=xorshift(state)^kmer
+        if -kmer>sketch[0]:
             hp.heappushpop(sketch,-kmer)
     return sketch

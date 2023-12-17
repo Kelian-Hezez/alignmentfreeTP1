@@ -4,9 +4,8 @@ from sampling import sample
 
 
 
-def jaccard(fileA,fileB,k,s):
+def jaccard(heapA,fileB,k,s):
 
-    heapA=sample(fileA,k,s)
     heapB=sample(fileB,k,s)
 
     taille_I = 0  
@@ -17,7 +16,6 @@ def jaccard(fileA,fileB,k,s):
     lA=len(heapA)
     lB=len(heapB)
     while a<lA and b<lB:
-        print(a,b)
         if heapA[a]==heapB[b]:
             taille_I+=1
             taille_U+=1
@@ -46,7 +44,7 @@ if __name__ == "__main__":
     
     filenames = list(files.keys())
     for i in range(len(files)):
+        heapA=sample(files[filenames[i]],k,s)
         for j in range(i+1, len(files)):
-            print(filenames[i],filenames[j])
-            J = jaccard(files[filenames[i]], files[filenames[j]], k, s)
+            J = jaccard(heapA, files[filenames[j]], k, s)
             print(filenames[i], filenames[j], J)
