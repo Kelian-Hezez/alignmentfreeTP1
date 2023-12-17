@@ -34,6 +34,7 @@ def stream_kmers(sequences, k):
                 kmer_comp+=comp
                 kmer&=mask
 
-            if count>=k:
+            if count<k:
+                count+=1
+            else:
                 yield(min(kmer, kmer_comp))
-            count+=1
