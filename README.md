@@ -51,3 +51,11 @@ En revanche quand on compare des génomes d'espèces différentes (comme C avec 
 
 Conclusion:
 D'après ces comparaisons, la distance de jaccard est un indicateur cohérent de la distance génétique entre deux individus.
+
+
+TP2:
+
+Pour accelerer la comparaison de 2 génomes, on choisit d'échantillonner les s plus petits kmers des deux ensembles de kmers au lieu de comparer tous les kmers des génomes.
+En faisant cela, on obtient un resultat deux fois plus rapidemnt (en 30 secondes au lieu d'une minute pour des kmers de taille 21 et un echantillon de kmers de taille 10000).
+En revanche, prendre les plus petits kmers risque de nous sélectionner des kmers composés uniquement de nucléotides A. Pour remédier à cela, on veut utiliser une fonction xorshift pour rendre pseudo aléatoire la valeur des kmers. Avec la version actuelle du TP avec xorshift, le temps de run du script est beaucoup trop long, cela a augmenté par rapport à ce que l'on a fait en TP1. Il faudrait trouver un moyen de rendre plus efficace la fonction de xorshift pour rendre cela viable.
+Sans cette fonction de xorshift, les resultats ne sont pas très représentatifs des distances entre les génomes.

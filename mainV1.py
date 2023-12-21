@@ -40,7 +40,7 @@ if __name__ == "__main__":
     # Load all the files in a dictionary
     files = load_directory("data")
     k = 21
-    s = 60
+    s = 2000
     
     filenames = list(files.keys())
     for i in range(len(files)):
